@@ -9,7 +9,7 @@ import type { DataWork, Index } from "./engine/data";
 import { TIERS } from "./engine/recommend"; // not from api.ts, which imports this module
 import { norm } from "./engine/text";
 
-export const FORMAT = "loot-table-tierlist";
+export const FORMAT = "scifi-loot-table-tierlist";
 const BUCKETS: Bucket[] = [...TIERS, "unplaced"];
 
 interface FileEntry {

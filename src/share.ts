@@ -1,6 +1,6 @@
 /** Share links: a tier list in the URL itself, so there's no server and nothing stored anywhere.
  *
- *   https://feanaroo.github.io/loot-table/#s=2k3Ab9Z.x_Q2.7m&t=My+favourites
+ *   https://meliastech.github.io/scifi-loot-table/#s=2k3Ab9Z.x_Q2.7m&t=My+favourites
  *
  * After "s=": a digit, how many characters each series takes (2 while the catalog has under
  * 4,096 series, then 3), then the tiers S A B C D F separated by dots, each a run of series codes
@@ -14,7 +14,7 @@ import { TIERS } from "./engine/recommend";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
 /** Where links point, also from the desktop app: anyone can open them in a browser */
-export const SITE = "https://feanaroo.github.io/loot-table/";
+export const SITE = "https://meliastech.github.io/scifi-loot-table/";
 export const MAX_TITLE = 60;
 
 const code = (n: number, width: number) => {
