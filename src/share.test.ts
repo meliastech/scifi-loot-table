@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { buildIndex, type Dataset } from "./engine/data";
 import { decode, encode } from "./share";
 
-const data: Dataset = JSON.parse(readFileSync(new URL("../public/data.json", import.meta.url), "utf-8"));
+const data: Dataset = JSON.parse(readFileSync(new URL("./engine/__fixtures__/litrpg-data.json", import.meta.url), "utf-8"));
 const index = buildIndex(data);
 const key = (title: string) => data.works.find((w) => w.title === title)!.key;
 

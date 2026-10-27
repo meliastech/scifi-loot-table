@@ -103,6 +103,17 @@ def tags_for(subjects):
     return out
 
 
+SF_WORDS = ["science fiction", "science-fiction", "dystop", "cyberpunk", "space opera", "litrpg"]
+
+
+def is_scifi(categories):
+    """Open Library tags plenty of fantasy and classics "science fiction" too: those stay rankable
+    (they help match taste) but are never recommended"""
+    low = [c.lower() for c in categories]
+    sf = sum(any(w in c for w in SF_WORDS) for c in low)
+    return sf > 0 and sf >= sum("fantasy" in c for c in low)
+
+
 class Blocked(Exception):
     pass
 
@@ -165,8 +176,9 @@ def main():
             "rating": round(rating, 2) if rating else None, "ratingCount": count or None, "runtimeMin": None,
             "firstRelease": f"{year}-01-01" if year else None, "lastRelease": f"{year}-01-01" if year else None,
             "categories": [s for s in subjects if "fiction" in s.lower()][:6],
-            "core": True, "mentions": 0, "ident": key, "sid": sids[key],
+            "core": None, "mentions": 0, "ident": key, "sid": sids[key],
         })
+        works[-1]["core"] = is_scifi(works[-1]["categories"])
         t = tags_for(subjects)
         if t:
             tags[key] = t
