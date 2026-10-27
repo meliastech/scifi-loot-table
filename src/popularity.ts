@@ -16,7 +16,7 @@ export type PopMode = "combined" | "lists" | "ratings";
 export const POP_MODES: { id: PopMode; label: string; title: string }[] = [
   { id: "combined", label: "Both", title: "Reddit tier lists and Audible ratings together" },
   { id: "lists", label: "Reddit lists", title: "How many Reddit tier lists rank it" },
-  { id: "ratings", label: "Audible ratings", title: "How many ratings it has on Audible UK" },
+  { id: "ratings", label: "Ratings", title: "How many ratings it has" },
 ];
 
 export interface PopFilter {

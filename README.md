@@ -1,3 +1,21 @@
+# Sci-Fi Loot Table
+
+**Find your next sci-fi Kindle book, for Australia.** A fork of [feanaroo/loot-table](https://github.com/feanaroo/loot-table)
+(LitRPG audiobooks on Audible UK) adapted to all science fiction on the Amazon.com.au Kindle store.
+
+What's different from upstream:
+- Books, not audiobook series: links go to Amazon.com.au Kindle pages, no narrators or runtimes.
+- The data is built by `pipeline/build_data.py` (Python 3, standard library only): the catalog and
+  story tags from Open Library's science fiction subjects, Kindle ASINs, covers and ratings from
+  Amazon.com.au search. Run `python pipeline/build_data.py` to rebuild `public/data.json`.
+- There are no sci-fi tier lists yet, so "community quality" is a rating-count-weighted average
+  rating. Reddit tier lists are a possible later addition.
+- The scoring test runs against a copy of upstream's LitRPG dataset in `src/engine/__fixtures__/`.
+
+The upstream README follows.
+
+---
+
 # Loot Table
 
 **Find your next LitRPG audiobook.** Rank the series you've listened to, and Loot Table works out

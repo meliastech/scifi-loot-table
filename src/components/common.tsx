@@ -40,7 +40,7 @@ export function TierButtons({ work, compact }: { work: Work; compact?: boolean }
       ))}
       <button
         className={`tier-btn tier-unplaced ${current === "unplaced" ? "active" : ""}`}
-        title="Listened, rank later"
+        title="Read, rank later"
         onClick={(e) => {
           e.stopPropagation();
           current === "unplaced" ? remove(work.key) : place(work, "unplaced" as Bucket);
@@ -55,7 +55,7 @@ export function TierButtons({ work, compact }: { work: Work; compact?: boolean }
 export function Stars({ rating, count }: { rating: number | null; count: number | null }) {
   if (!rating) return null;
   return (
-    <span className="stars" title={`${rating.toFixed(2)} from ${count?.toLocaleString()} Audible ratings`}>
+    <span className="stars" title={`${rating.toFixed(2)} from ${count?.toLocaleString()} ratings`}>
       ★ {rating.toFixed(1)} <span className="muted">({count?.toLocaleString()})</span>
     </span>
   );

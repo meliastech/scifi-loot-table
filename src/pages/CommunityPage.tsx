@@ -19,7 +19,7 @@ export default function CommunityPage() {
       <div className="page-head">
         <h1>Community ranking</h1>
         <span className="muted">
-          The top 100 from Reddit tier lists: every "ranked higher than" in every list counts, each list counts the same.
+          The top 100 by rating, weighted so books with few ratings don't jump the queue.
         </span>
         <label className="toggle small">
           <input type="checkbox" checked={mainstream} onChange={(e) => setMainstream(e.target.checked)} />
@@ -35,7 +35,7 @@ export default function CommunityPage() {
             <th>Series</th>
             <th>Strength</th>
             <th>Lists</th>
-            <th>Audible</th>
+            <th>Rating</th>
             <th>Mine</th>
           </tr>
         </thead>

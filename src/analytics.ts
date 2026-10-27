@@ -7,7 +7,7 @@
 
 /** Your GoatCounter code: the "xyz" of xyz.goatcounter.com. Empty: counting is off. */
 const CODE = "feanaro";
-const SITE_HOST = "feanaroo.github.io";
+const SITE_HOST = "meliastech.github.io";
 
 // A pinned version of GoatCounter's script, checked by hash: a changed file wouldn't run
 const SCRIPT = "https://gc.zgo.at/count.v4.js";

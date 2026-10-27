@@ -15,6 +15,12 @@ export type Bucket = Tier | "unplaced";
 /** What kind of story a work is, by group (setting, story, lead, tone); null until tagged */
 export type StoryTags = Record<string, string[]> | null;
 
+/** The Kindle edition on Amazon.com.au, or a Kindle store search when its ASIN isn't known */
+export const kindleUrl = (w: { firstAsin: string; title: string; authors: string[] }) =>
+  w.firstAsin
+    ? `https://www.amazon.com.au/dp/${w.firstAsin}`
+    : `https://www.amazon.com.au/s?i=digital-text&k=${encodeURIComponent(`${w.title} ${w.authors[0] ?? ""}`)}`;
+
 export interface Work {
   key: string;
   title: string;
@@ -87,7 +93,7 @@ export interface CommunityWork extends Work {
 
 export type Board = Record<Bucket, Work[]>;
 
-const STORAGE_KEY = "loot-table.tierlist";
+const STORAGE_KEY = "scifi-loot-table.tierlist";
 type StoredBoard = Partial<Record<Bucket, string[]>>;
 
 function readStored(): StoredBoard {
@@ -116,7 +122,7 @@ function toWork(w: DataWork, tier: Tier | null = null): Work {
     firstRelease: w.firstRelease,
     lastRelease: w.lastRelease,
     tier,
-    audibleUrl: `https://www.audible.co.uk/pd/${w.firstAsin}`,
+    audibleUrl: kindleUrl(w),
     status: st ? { state: st[0], detail: st[1], source: st[2] } : null,
   };
 }

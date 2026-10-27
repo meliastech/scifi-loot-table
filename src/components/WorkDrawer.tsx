@@ -45,7 +45,7 @@ function CommunityPlacements({ placements }: { placements: WorkDetail["community
 
   return (
     <>
-      <h3>In Reddit tier lists ({placements.length})</h3>
+      <h3>In tier lists ({placements.length})</h3>
       <div className="seg-bar">
         {levels.map((l) => (
           <button
@@ -116,7 +116,7 @@ function groupBooks(books: Book[]): Book[][] {
 // A pre-order has no year (Audible's placeholder date is dropped), length or rating
 const when = (b: Book) => [b.year, hours(b.runtimeMin)].filter(Boolean).join(" · ") || "not out yet";
 const BookLink = ({ b }: { b: Book }) => (
-  <a href={`https://www.audible.co.uk/pd/${b.asin}`} target="_blank" rel="noreferrer">
+  <a href={`https://www.amazon.com.au/dp/${b.asin}`} target="_blank" rel="noreferrer">
     {b.title}
   </a>
 );
@@ -203,17 +203,16 @@ export default function WorkDrawer({ workKey, onClose }: { workKey: string | nul
               <div>
                 <h2>{work.title}</h2>
                 <div>{work.authors.join(", ")}</div>
-                <div className="muted small">Narrated by {work.narrators.slice(0, 3).join(", ") || "?"}</div>
                 <div className="small meta">
                   <Stars rating={work.rating} count={work.ratingCount} />
                   <span>
-                    {work.bookCount} book{work.bookCount !== 1 ? "s" : ""} · {hours(work.runtimeMin)}
+                    {work.firstRelease?.slice(0, 4) ?? ""}
                   </span>
                 </div>
                 <StatusLine status={work.status} />
                 <TierButtons work={work} />
                 <a className="audible-link" href={work.audibleUrl} target="_blank" rel="noreferrer">
-                  Open book 1 on Audible ↗
+                  Open on Kindle (Amazon AU) ↗
                 </a>
               </div>
             </div>

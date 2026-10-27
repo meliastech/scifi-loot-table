@@ -6,7 +6,7 @@ import { buildIndex, type Dataset } from "./data";
 import { recommend, TIERS } from "./recommend";
 import expected from "./__fixtures__/python-recs.json";
 
-const data: Dataset = JSON.parse(readFileSync(new URL("../../public/data.json", import.meta.url), "utf-8"));
+const data: Dataset = JSON.parse(readFileSync(new URL("./__fixtures__/litrpg-data.json", import.meta.url), "utf-8"));
 const index = buildIndex(data);
 
 describe("recommend", () => {

@@ -54,7 +54,7 @@ export default function SharePanel({ onClose }: { onClose: () => void }) {
       </div>
       <input
         className="share-title"
-        placeholder="Title (optional), e.g. My LitRPG favourites"
+        placeholder="Title (optional), e.g. My sci-fi favourites"
         value={title}
         maxLength={MAX_TITLE}
         onChange={(e) => setTitle(e.target.value)}
