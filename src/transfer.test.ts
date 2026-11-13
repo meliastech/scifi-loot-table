@@ -4,7 +4,7 @@ import type { Board, Bucket, Work } from "./api";
 import { buildIndex, type Dataset } from "./engine/data";
 import { combine, readFile, toFile } from "./transfer";
 
-const data: Dataset = JSON.parse(readFileSync(new URL("../public/data.json", import.meta.url), "utf-8"));
+const data: Dataset = JSON.parse(readFileSync(new URL("./engine/__fixtures__/litrpg-data.json", import.meta.url), "utf-8"));
 const index = buildIndex(data);
 
 const work = (title: string) => {

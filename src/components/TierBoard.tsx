@@ -32,7 +32,7 @@ const collision: CollisionDetection = (args) => {
   }
   return closestCorners(args);
 };
-const LABELS: Record<Bucket, string> = { S: "S", A: "A", B: "B", C: "C", D: "D", F: "F", unplaced: "Listened" };
+const LABELS: Record<Bucket, string> = { S: "S", A: "A", B: "B", C: "C", D: "D", F: "F", unplaced: "Read" };
 
 function Tile({ work }: { work: Work }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: work.key });
@@ -68,7 +68,7 @@ function Row({ bucket, works }: { bucket: Bucket; works: Work[] }) {
           ))}
           {works.length === 0 && bucket === "unplaced" && (
             <span className="muted hint">
-              Books you've listened to but haven't ranked yet. Add them from the search on the right.
+              Books you've read but haven't ranked yet. Add them from the search on the right.
             </span>
           )}
         </div>

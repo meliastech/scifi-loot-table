@@ -3,3 +3,6 @@ dist/
 *.tsbuildinfo
 src-tauri/target/
 src-tauri/gen/
+pipeline/cache/
+__pycache__/
+*.pyc

@@ -156,7 +156,7 @@ export default function SharedPage({ fragment }: { fragment: string }) {
       </div>
       {comparing && <Compare shared={shared} mine={mine} />}
       <p className="muted small shared-foot">
-        Loot Table recommends LitRPG audiobooks from 900+ Reddit tier lists. <a href="#/tierlist">Make your own list</a>.
+        Sci-Fi Loot Table recommends Kindle sci-fi from Amazon.com.au. <a href="#/tierlist">Make your own list</a>.
       </p>
     </div>
   );

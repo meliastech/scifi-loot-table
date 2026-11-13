@@ -28,7 +28,7 @@ function DataDate() {
   }, []);
   if (!built) return null;
   const date = new Date(built).toLocaleDateString("en-GB", { month: "short", year: "numeric" });
-  return <span className="save-state" title="When the Reddit and Audible data was collected">Data: {date}</span>;
+  return <span className="save-state" title="When the book data was collected">Data: {date}</span>;
 }
 
 export default function App() {

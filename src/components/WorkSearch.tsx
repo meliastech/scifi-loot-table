@@ -30,13 +30,13 @@ export default function WorkSearch({ autoFocus }: { autoFocus?: boolean }) {
     <div className="search">
       <input
         className="search-input"
-        placeholder="Search series, author or narrator…"
+        placeholder="Search books or authors…"
         value={q}
         autoFocus={autoFocus}
         onChange={(e) => setQ(e.target.value)}
       />
       <div className="muted small search-caption">
-        {q ? (loading ? "Searching…" : `${results.length} results`) : "Most rated on Audible UK"}
+        {q ? (loading ? "Searching…" : `${results.length} results`) : "Most read sci-fi"}
       </div>
       <div className="search-results">
         {results.map((w) => (

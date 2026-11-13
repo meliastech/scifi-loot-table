@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Loot Table",
+        "title": "Sci-Fi Loot Table",
         "width": 1320,
         "height": 880,
         "minWidth": 760,
@@ -29,8 +29,8 @@
     "active": true,
     "targets": "all",
     "category": "Entertainment",
-    "shortDescription": "Find your next LitRPG audiobook",
-    "longDescription": "Rank the LitRPG and progression fantasy audiobooks you've heard, and get recommendations from hundreds of Reddit tier lists and readers with taste like yours.",
+    "shortDescription": "Find your next sci-fi Kindle book",
+    "longDescription": "Rank the sci-fi you've read and get Kindle recommendations from Amazon.com.au.",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

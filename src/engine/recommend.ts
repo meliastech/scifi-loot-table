@@ -201,10 +201,10 @@ export function recommend(index: Index, myRanks: Map<string, number>, listened: 
           (top ? `, ${top} in their top tier` : ""),
       );
     }
-    if (q !== null) reasons.push(`#${index.qualityOrder.get(key)} of ${qualityCount} in Reddit tier lists`);
+    if (q !== null) reasons.push(`#${index.qualityOrder.get(key)} of ${qualityCount} by rating on Amazon.com.au`);
     const lists = index.appearances.get(key) ?? 0;
     if (lists >= 100 || (w.ratingCount ?? 0) >= 5000) {
-      reasons.push(`widely read: in ${lists} Reddit tier lists, ${(w.ratingCount ?? 0).toLocaleString("en-GB")} Audible ratings`);
+      reasons.push(`widely read: ${(w.ratingCount ?? 0).toLocaleString("en-AU")} ratings`);
     }
     for (const a of authors) reasons.push(`same author as ${likedAuthors.get(a)!.slice(0, 2).join(", ")}`);
     for (const n of narrators) reasons.push(`narrated by ${n}, like ${likedNarrators.get(n)!.slice(0, 2).join(", ")}`);

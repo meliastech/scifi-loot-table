@@ -3,7 +3,7 @@ import { describe as group, expect, it } from "vitest";
 import { buildIndex, type Dataset } from "./engine/data";
 import { describe, within } from "./popularity";
 
-const data: Dataset = JSON.parse(readFileSync(new URL("../public/data.json", import.meta.url), "utf-8"));
+const data: Dataset = JSON.parse(readFileSync(new URL("./engine/__fixtures__/litrpg-data.json", import.meta.url), "utf-8"));
 const index = buildIndex(data);
 const ranked = data.works.filter((w) => w.core && (index.appearances.get(w.key) ?? 0) > 0);
 const work = (title: string) => data.works.find((w) => w.title === title)!;

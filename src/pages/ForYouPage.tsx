@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { api, hours, TIERS, type Recommendations } from "../api";
+import { api, TIERS, type Recommendations } from "../api";
 import { useBoard, useOpenWork } from "../board";
 import { Cover, StatusLine, Stars, Tags, TierButtons, type TagFilter } from "../components/common";
 import PopularitySlider from "../components/PopularitySlider";
@@ -127,11 +127,11 @@ export default function ForYouPage() {
         <h1>For you</h1>
         <span className="muted">
           {ranked < 5
-            ? "Rank at least 5 series to get personal picks — until then this is the community's favourites."
-            : `Based on your ${ranked} ranked series, ${data.neighbours} Reddit readers with similar taste, and ${data.communityLists} tier lists.`}
+            ? "Rank at least 5 books to get personal picks — until then this is the community's favourites."
+            : `Based on your ${ranked} ranked books, what they're about, and Amazon.com.au ratings.`}
         </span>
       </div>
-      {data.communityLists === 0 && (
+      {false && (
         <div className="notice">
           No Reddit tier lists are parsed yet, so there's nothing to score with. Run <code>audiorecs tierlists</code>.
         </div>
@@ -166,8 +166,7 @@ export default function ForYouPage() {
               <h3>{r.title}</h3>
               <div className="small">{r.authors.slice(0, 2).join(", ")}</div>
               <div className="muted small">
-                {r.narrators[0] && `🎙 ${r.narrators[0]} · `}
-                {r.bookCount} book{r.bookCount !== 1 ? "s" : ""} · {hours(r.runtimeMin)}
+                {r.firstRelease?.slice(0, 4) ?? ""}
               </div>
               <StatusLine status={r.status} />
               <Stars rating={r.rating} count={r.ratingCount} />
